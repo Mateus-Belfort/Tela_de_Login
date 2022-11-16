@@ -1,0 +1,184 @@
+@import url(//fonts.googleapis.com/css?family=Lato:300:400);
+body {
+  margin: 0;
+}
+
+p {
+  font-family: "Lato", sans-serif;
+  letter-spacing: 1px;
+  font-size: 14px;
+  color: #252525;
+}
+
+.box {
+  background-color: #000;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  width: 300px;
+  height: 450px;
+}
+
+.box h1 {
+  position: relative;
+  z-index: 1;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  letter-spacing: 2px;
+  font-size: 48px;
+}
+
+.box::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  background: #000;
+  z-index: 0;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 140%;
+  background: linear-gradient(#2f00ff, #d400d4);
+  animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.label {
+  font-family: "Lato", sans-serif;
+  padding-bottom: 5px;
+  font-size: 18px;
+  z-index: 1;
+}
+
+.inputDados {
+  border: 1px solid transparent;
+  background-color: rgba(255, 255, 255, 0.7176470588);
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  z-index: 1;
+}
+
+.btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 35px 35px;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #02243b;
+  color: #fff;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.btn:hover {
+  box-shadow: 0 0 1.5rem #d400d4;
+}
+
+.header {
+  position: relative;
+  text-align: center;
+  background: linear-gradient(60deg, rgb(25, 18, 56) 0%, rgb(0, 93, 105) 100%);
+  color: #fff;
+}
+
+.inner-header {
+  height: 65vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.flex {
+  /*Flexbox for containers*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.waves {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  margin-bottom: -7px;
+  /*Fix for safari gap*/
+  min-height: 100px;
+  max-height: 150px;
+}
+
+.content {
+  position: relative;
+  height: 20vh;
+  text-align: center;
+  background-color: #e0ffff;
+}
+
+/* Animation */
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .waves {
+    height: 40px;
+    min-height: 40px;
+  }
+  .content {
+    height: 30vh;
+  }
+  h1 {
+    font-size: 24px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
